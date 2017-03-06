@@ -1,6 +1,7 @@
 {
   "$jason": {
     "head": {
+      "title":"Newsbot",
       "data": {
         "news": [
           {
