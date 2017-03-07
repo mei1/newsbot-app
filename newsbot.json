@@ -59,6 +59,18 @@
         ]
       },
       "actions": {
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "https://raw.githubusercontent.com/mei1/newsbot-app/master/newsbot.json"
+          },
+          "success": {
+            "type": "$render"
+          }
+        },
+        "$show": {
+          "type": "$reload"
+        },
         "$foreground": {
           "type": "$reload"
         },
