@@ -62,7 +62,7 @@
         "$load": {
           "type": "$network.request",
           "options": {
-            "url": "https://raw.githubusercontent.com/mei1/newsbot-app/master/newsbot.json"
+            "url": "https://raw.githubusercontent.com/mei1/newsbot-app/master/test.json"
           },
           "success": {
             "type": "$render"
