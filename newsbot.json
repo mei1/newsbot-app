@@ -81,7 +81,7 @@
           }
         }
       },
-      "template": {
+      "templates": {
         "body": {
           "header": {
             "menu": {
