@@ -1,119 +1,93 @@
 {
   "$jason": {
     "head": {
-      "title":"Newsbot",
-      "data": {
-        "news": [
-          {
-            "id": "fcf7bd7a-5d51-4f30-b5f3-1e47d4ee5ff9",
-            "sourceUrl": "http://feedproxy.google.com/~r/zerohedge/feed/~3/QbI8d40Pqu0/you-cannot-have-attorney-general-lying-under-oath",
-            "url": "http://www.zerohedge.com/news/2017-03-05/you-cannot-have-attorney-general-lying-under-oath",
-            "title": "You Cannot Have The Attorney General Lying Under Oath",
-            "summary": null,
-            "text": "We discuss the Jeff Sessions controversy in this video for the Trump Administration, and why it is obvious that Sessions needs to step down, as it is bad precedent for the Attorney General to be caught lying under oath at the confirmation hearings. The problem for Sessions is that if nothing went on in the Russia Meetings, the fact that he at the very least, would lie or purposely mislead just to avoid the ",
-            "date": "Mon Mar 06 00:58:44 SGT 2017",
-            "tags": "[Zero Hedge, Zerohedge, Finance, Economics, Markets, Politics, Analysis, Twitter]",
-            "author": "EconMatters",
-            "image": "https://1.bp.blogspot.com/-WAfit52dfiE/WLw6Dj2TVKI/AAAAAAAAOQo/Q67Sa3lffVgGzaRCGzU_ODR3IFV8dWeiwCLcB/s400/Jeff%252520Sessions%252520sworn%252520in_1484065098568_7650813_ver1.0.jpg",
-            "video": null
-          },
-          {
-            "id": "bf0daa2f-c8f1-4eca-99e1-752266b881c6",
-            "sourceUrl": "http://feedproxy.google.com/~r/zerohedge/feed/~3/MWyBbm5WgY4/6-steps-toward-more-sane-economic-policy",
-            "url": "http://www.zerohedge.com/news/2017-03-04/6-steps-toward-more-sane-economic-policy",
-            "title": "6 Steps Toward A More Sane Economic Policy",
-            "summary": null,
-            "text": "Of the current cabinet level bureaus, the following should be eliminated immediately, including all departments within these bureaus, such as OSHA (within the Department of Labor) and the EPA (customarily accorded cabinet rank): The above seven agencies spent $667 billion in 2010, representing 23% of all federal spending. Of course, a free market must include freedom of its participants to use whatever medium of exchange � money � that it chooses. Money is part and parcel of the market economy. ",
-            "date": "Mon Mar 06 00:56:32 SGT 2017",
-            "tags": "[Zero Hedge, Zerohedge, Finance, Economics, Markets, Politics, Analysis, Consumer protection, Mises Institute, Purchasing Power]",
-            "author": "Tyler Durden",
-            "image": null,
-            "video": null
-          },
-          {
-            "id": "d4c59f27-886b-4d67-bcf1-1195c24f5775",
-            "sourceUrl": "http://feeds.mashable.com/~r/Mashable/~3/9-qXXjgJUYg/",
-            "url": "http://mashable.com/2017/03/05/snl-male-feminism-sketch/",
-            "title": "A reminder from 'SNL': For the love of god, do not use feminism to pick up chicks",
-            "summary": null,
-            "text": "The year is 2017. Hillary lost the election, and dudes are walking around wearing tees reading \"The Future Is Female\" hoping it will help them get laid.� Saturday Day Night Live got very real about the performative wokeness plauge with Cecily Strong as a woman fending off a series of self-proclaimed feminist suitors who lose their chill when they're rejected.� \"Can I ask you a question because we both love Hillary? Do you wanna look at my balls?\" is not a great pick up line, and you don't need to read bell hooks to know that.",
-            "date": "2017/03/05",
-            "tags": "[tv, comedy, saturday-night-live, feminism, entertainment, videos]",
-            "author": "Tricia Gilbride",
-            "image": "http://i.amz.mshcdn.com/iSuwa-j79kTVhEK_lyAPC2h4Adk=/410x230/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fstory%2Fthumbnail%2F38714%2Fe7fc8649-7923-4355-b211-75c290632c10.jpg",
-            "video": null
-          },
-          {
-            "id": "1bb3fffb-94a6-4294-ad77-161dbf29751c",
-            "sourceUrl": "http://feeds.mashable.com/~r/Mashable/~3/op5bIWjccfc/",
-            "url": "http://mashable.com/2017/03/05/mashreads-podcast-history-is-all-you-left-me-adam-silvera/",
-            "title": "MashReads Podcast: 'History Is All You Left Me' is a heartbreaking novel about teenage grief",
-            "summary": null,
-            "text": "It's an uncomfortable feeling to read a novel about death and grief, especially when the one who has passed away and the ones who are grieving are young. But for Adam Silvera, author of History Is All You Left Me, that's the point. SEE ALSO: 'Tiny Beautiful Things' is the advice column at its best \"I didn't want to force quippy remarks just to make the reader feel more comfortable.",
-            "date": "2017/03/05",
-            "tags": "[grief, podcast, mashreads-podcast, mashreads, books, entertainment]",
-            "author": "MJ Franklin",
-            "image": "http://i.amz.mshcdn.com/DAyvkzLkctv9eUUFQLFW-WbPiIQ=/90x90/2016%2F06%2F30%2F00%2F201503270cHeadshot_20.dac12.eece9.jpg",
-            "video": null
-          }
-        ]
+      "title": "Newsbot",
+      "type": "label",
+      "text": "Newsbot",
+      "styles": {
+        "color": "#ffffff",
+        "font": "HelveticaNeue-Bold",
+        "size": "50"
       },
       "actions": {
-        "$load": {
-          "type": "$network.request",
-          "options": {
-            "url": "https://raw.githubusercontent.com/mei1/newsbot-app/master/test.json"
-          },
-          "success": {
-            "type": "$render"
-          }
-        },
-        "$show": {
-          "type": "$reload"
-        },
         "$foreground": {
           "type": "$reload"
         },
         "$pull": {
-          "type": "$flush",
-          "success": {
-            "type": "$reload"
-          }
+          "type": "$reload"
         }
       },
-      "templates": {
+      "data": {
+        "item": [
+          {
+            "newstitle": "You Cannot Have The Attorney General Lying Under Oath",
+            "newscontent": "We discuss the Jeff Sessions controversy in this video for the Trump Administration, and why it is obvious that Sessions needs to step down, as it is bad precedent for the Attorney General to be caught lying under oath at the confirmation hearings. The problem for Sessions is that if nothing went on in the Russia Meetings, the fact that he at the very least, would lie or purposely mislead just to avoid the"
+          },
+          {
+            "newstitle": "6 Steps Toward A More Sane Economic Policy",
+            "newscontent": "Of the current cabinet level bureaus, the following should be eliminated immediately, including all departments within these bureaus, such as OSHA (within the Department of Labor) and the EPA (customarily accorded cabinet rank): The above seven agencies spent $667 billion in 2010, representing 23% of all federal spending. Of course, a free market must include freedom of its participants to use whatever medium of exchange � money � that it chooses. Money is part and parcel of the market economy."
+          },
+          {
+            "newstitle": "A reminder from 'SNL': For the love of god, do not use feminism to pick up chicks",
+            "newscontent": "The year is 2017. Hillary lost the election, and dudes are walking around wearing tees reading \"The Future Is Female\" hoping it will help them get laid.� Saturday Day Night Live got very real about the performative wokeness plauge with Cecily Strong as a woman fending off a series of self-proclaimed feminist suitors who lose their chill when they're rejected.� \"Can I ask you a question because we both love Hillary? Do you wanna look at my balls?\" is not a great pick up line, and you don't need to read bell hooks to know that."
+          }
+        ]
+      },
+      "template": {
         "body": {
+          "type": "vertical",
           "header": {
-            "menu": {
-              "label": "="
-            },
-            "title": {
-              "type": "label",
-              "style": {
-                "width": "94",
-                "height": "27"
-              },
-              "text": "NewsBot"
+            "title": "Newsbot",
+            "style": {
+              "align": "center",
+              "font": "HelveticaNeue-Bold",
+              "size": "60",
+              "color": "#ffffff",
+              "background": "#008080"
             }
           },
-          "section": {
-            "{{#each news}}": {
-              "header": {
-                "type": "horizontal",
-                "components": [
+          "style": {
+            "background": "#ffffff",
+            "align": "center",
+            "font": "Courier",
+            "size": "30"
+          },
+          "sections": {
+            "{{#each posts}}": [
+              {
+                "items": [
                   {
-                    "type": "label",
-                    "text": "{{title}}"
+                    "type": "vertical",
+                    "style": {
+                      "align": "center"
+                    },
+                    "components": [
+                      {
+                        "type": "label",
+                        "text": "{{newstitle}}",
+                        "style": {
+                          "padding": "10",
+                          "height": "40",
+                          "background": "#008080",
+                          "color": "#ffffff"
+                        }
+                      },
+                      {
+                        "type": "label",
+                        "text": "{{newscontent}}",
+                        "style": {
+                          "padding": "10",
+                          "padding_top": "10",
+                          "height": "150",
+                          "background": "#DCDCDC",
+                          "distribution": "equalspacing"
+                        }
+                      }
+                    ]
                   }
                 ]
-              },
-              "items": [
-                {
-                  "type": "label",
-                  "text": "{{text}}"
-                }
-              ]
-            }
+              }
+            ]
           }
         }
       }
