@@ -1,0 +1,93 @@
+{
+  "$jason": {
+    "head": {
+      "title": "NewsBot",
+      "type": "label",
+      "text": "NewsBot",
+      "styles": {
+        "note": {
+          "color": "#ffffff",
+          "font": "HelveticaNeue-Bold",
+          "size": "50"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "http://alpha-marsbots.rhcloud.com/newsbot/svcs/recent/0"
+          },
+          "success": {
+            "type": "$render"
+          },
+          "error": {
+            "type": "$util.banner",
+            "options": {
+              "title": "Error",
+              "description": "{{$jason}}"
+            }
+          }
+        },
+        "$pull": {
+          "type": "$flush",
+          "success": {
+            "type": "$reload"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#ffffff",
+            "border": "none"
+          },
+          "header": {
+            "title": "NewsBot",
+            "style": {
+              "color": "#ffffff",
+              "background": "#008080"
+            }
+          },
+          "sections": [
+            {
+              "items": {
+                "{{#each $jason}}": {
+                  "type": "vertical",
+                  "style": {
+                    "align": "center"
+                  },
+                  "components": [
+                    {
+                      "type": "label",
+                      "text": "{{title}}",
+                      "style": {
+                        "padding": "10",
+                        "height": "60",
+                        "background": "#008080",
+                        "color": "#ffffff",
+                        "distribution": "equalspacing"
+                      }
+                    },
+                    {
+                      "type": "label",
+                      "text": "{{summary}}",
+                      "style": {
+                        "padding": "10",
+                        "height": "150",
+                        "background": "#F0F0F0",
+                        "color": "#000000",
+                        "distribution": "equalspacing"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+            }
+          ]
+        }
+      }
+    }
+  }
+}
