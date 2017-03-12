@@ -1,121 +1,103 @@
 {
-    "$jason": {
-        "head": {
-            "title": "NewsBot",
-            "type": "label",
-            "text": "NewsBot",
-            "styles": {
-                "note": {
-                    "color": "#ffffff",
-                    "size": "50"
-                }
-            },
-            "actions": {
-                "$load": {
-                    "type": "$network.request",
-                    "options": {
-                        "url": "http://alpha-marsbots.rhcloud.com/newsbot/svcs/recent/0"
-                    },
-                    "success": {
-                        "type": "$render"
-                    },
-                    "error": {
-                        "type": "$util.banner",
-                        "options": {
-                            "title": "Error",
-                            "description": "{{$jason}}"
-                        }
-                    }
-                },
-                "$pull": {
-                    "type": "$flush",
-                    "success": {
-                        "type": "$reload"
-                    }
-                }
-            },
-            "templates": {
-                "body": {
-                    
-                    "header": {
-                        "title": "NewsBot",
-                        "style": {
-                            "color": "#ffffff",
-                            "background": "#008080"
-                        }
-                    },
-                    "sections": [
-                                 {
-                                 "items": [{
-                                 "{{#each $jason}}": {
-                                 "type": "vertical",
-                                 "style": {
-                                 "align": "center"
-                                 },
-                                 "components": [
-                                                {
-                                                "type": "label",
-                                                "text": "{{title}}",
-                                                "style": {
-                                                "padding": "10",
-                                                "width": "100%",
-                                                "height": "50",
-                                                "background": "#26a69a",
-                                                "color": "#ffffff",
-                                                "distribution": "equalspacing"
-                                                }
-                                                },
-                                                {
-                                                "type": "label",
-                                                "text": "{{summary}}",
-                                                "style": {
-                                                "padding": "10",
-                                                "width": "100%",
-                                                "height": "150",
-                                                "background": "#F0F0F0",
-                                                "color": "#000000",
-                                                "distribution": "equalspacing"
-                                                }
-                                                }
-                                                ]
-                                 }
-                                 }]
-                                 },
-                                 {
-                                 "items": [
-                                           {
-                                           
-                                                          "type": "label",
-                                                          "text": "More",
-                                                          "style": {
-                                                          "align": "center",
-                                                          "width": "100%",
-                                                          "height": "40",
-                                                          "background": "#26a69a",
-                                                          "color": "#ffffff"
-                                                          }
-                                           
-                                           }
-                                           ]
-                                 }
-                                 ],
-                    "footer": {
-                        "tabs": {
-                            "style": {
-                                "background": "rgba(255,255,255,0.8)",
-                                "color": "#000000"
-                            },
-                            "items": [{
-                                      "type": "label",
-                                      "text": "News"
-                                      }, {
-                                      "type": "label",
-                                      "text": "To Do"
-                                      }]
-                        }
-                    }
-                }
-            }
+  "$jason": {
+    "head": {
+      "title": "NewsBot",
+      "type": "label",
+      "text": "NewsBot",
+      "styles": {
+        "note": {
+          "color": "#ffffff",
+          "size": "50"
         }
+      },
+      "actions": {
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "http://alpha-marsbots.rhcloud.com/newsbot/svcs/recent/0"
+          },
+          "success": {
+            "type": "$render"
+          },
+          "error": {
+            "type": "$util.banner",
+            "options": {
+              "title": "Error",
+              "description": "{{$jason}}"
+            }
+          }
+        },
+        "$pull": {
+          "type": "$flush",
+          "success": {
+            "type": "$reload"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "NewsBot",
+            "style": {
+              "color": "#ffffff",
+              "background": "#008080"
+            }
+          },
+          "sections": [
+            {
+              "items": {
+                "{{#each $jason}}": {
+                  "type": "vertical",
+                  "style": {
+                    "align": "center"
+                  },
+                  "components": [
+                    {
+                      "type": "label",
+                      "text": "{{title}}",
+                      "style": {
+                        "padding": "10",
+                        "width": "100%",
+                        "height": "50",
+                        "background": "#26a69a",
+                        "color": "#ffffff",
+                        "distribution": "equalspacing"
+                      }
+                    },
+                    {
+                      "type": "label",
+                      "text": "{{summary}}",
+                      "style": {
+                        "padding": "10",
+                        "width": "100%",
+                        "height": "150",
+                        "background": "#F0F0F0",
+                        "color": "#000000",
+                        "distribution": "equalspacing"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "items": [
+                {
+                  "type": "label",
+                  "text": "More",
+                  "style": {
+                    "align": "center",
+                    "width": "100%",
+                    "height": "40",
+                    "background": "#26a69a",
+                    "color": "#ffffff"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
+  }
 }
