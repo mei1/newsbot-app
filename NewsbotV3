@@ -12,18 +12,24 @@
       },
       "actions": {
         "$load": {
-          "type": "$network.request",
+          "type": "$cache.set",
           "options": {
-            "url": "http://alpha-marsbots.rhcloud.com/newsbot/svcs/recent/0"
+            "pageno": "0"
           },
           "success": {
-            "type": "$render"
-          },
-          "error": {
-            "type": "$util.banner",
+            "type": "$network.request",
             "options": {
-              "title": "Error",
-              "description": "{{$jason}}"
+              "url": "http://alpha-marsbots.rhcloud.com/newsbot/svcs/recent/{{$cache.pageno}}"
+            },
+            "success": {
+              "type": "$render"
+            },
+            "error": {
+              "type": "$util.banner",
+              "options": {
+                "title": "Error",
+                "description": "{{$jason}}"
+              }
             }
           }
         },
@@ -45,10 +51,14 @@
           },
           "sections": [
             {
+              "style": {
+                "border": "none"
+              },
               "items": {
                 "{{#each $jason}}": {
                   "type": "vertical",
                   "style": {
+                    "border": "none",
                     "align": "center"
                   },
                   "components": [
@@ -91,12 +101,25 @@
                     "color": "#ffffff"
                   },
                   "action": {
-                    "type": "$network.request",
+                    "type": "$cache.set",
                     "options": {
-                      "url": "http://alpha-marsbots.rhcloud.com/newsbot/svcs/recent/1"
+                      "pageno": "1"
                     },
                     "success": {
-                      "type": "$render"
+                      "type": "$network.request",
+                      "options": {
+                        "url": "http://alpha-marsbots.rhcloud.com/newsbot/svcs/recent/{{$cache.pageno}}"
+                      },
+                      "success": {
+                        "type": "$render"
+                      },
+                      "error": {
+                        "type": "$util.banner",
+                        "options": {
+                          "title": "Error",
+                          "description": "{{$jason}}"
+                        }
+                      }
                     }
                   }
                 }
@@ -113,11 +136,11 @@
               "items": [
                 {
                   "text": "News",
-                  "url":"file://jasonpedia.json"
+                  "url": "file://jasonpedia.json"
                 },
                 {
                   "text": "To Do",
-                  "url":"file://testing.json"
+                  "url": "file://testing.json"
                 }
               ]
             }
